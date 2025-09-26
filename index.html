@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridX Microgrid Monitoring Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">⚡</div>
+                <h1>GridX Microgrid Monitoring Dashboard</h1>
+            </div>
+            <div class="nav-status">
+                <span class="status-indicator online"></span>
+                <span class="status-text">Online</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Smart Energy Management for Rural Microgrids</h2>
+            <p>Real-time monitoring and analytics for sustainable energy systems</p>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        
+        <!-- Energy Metrics Cards -->
+        <section class="metrics-section">
+            <div class="metrics-grid">
+                
+                <!-- Generation Card -->
+                <div class="metric-card generation">
+                    <div class="card-header">
+                        <div class="card-icon">🌞</div>
+                        <h3>Energy Generation</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="metric-value">
+                            <span id="generation-value">0.0</span>
+                            <span class="unit">kWh</span>
+                        </div>
+                        <div class="metric-subtitle">Current Output</div>
+                        <div class="metric-trend">
+                            <span id="generation-trend" class="trend-indicator">↗</span>
+                            <span id="generation-change">+2.3%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storage Card -->
+                <div class="metric-card storage">
+                    <div class="card-header">
+                        <div class="card-icon">🔋</div>
+                        <h3>Energy Storage</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="metric-value">
+                            <span id="storage-value">0</span>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="metric-subtitle">Battery Level</div>
+                        <div class="battery-indicator">
+                            <div class="battery-fill" id="battery-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumption Card -->
+                <div class="metric-card consumption">
+                    <div class="card-header">
+                        <div class="card-icon">🏠</div>
+                        <h3>Energy Consumption</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="metric-value">
+                            <span id="consumption-value">0.0</span>
+                            <span class="unit">kWh</span>
+                        </div>
+                        <div class="metric-subtitle">Current Usage</div>
+                        <div class="efficiency-indicator">
+                            <span>Efficiency: </span>
+                            <span id="efficiency-value">95%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chart and Alerts Section -->
+        <section class="analytics-section">
+            
+            <!-- Energy Trend Chart -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Energy Generation vs Consumption</h3>
+                    <div class="chart-controls">
+                        <span class="time-range active">24H</span>
+                        <span class="time-range">7D</span>
+                        <span class="time-range">30D</span>
+                    </div>
+                </div>
+                <canvas id="energyChart"></canvas>
+            </div>
+
+            <!-- Alerts Panel -->
+            <div class="alerts-container">
+                <div class="alerts-header">
+                    <h3>System Alerts</h3>
+                    <div class="alert-count" id="alert-count">3</div>
+                </div>
+                <div class="alerts-list" id="alerts-list">
+                    <!-- Alerts will be populated by JavaScript -->
+                </div>
+                <div class="alerts-footer">
+                    <button class="btn-clear-alerts" onclick="clearAlerts()">Clear All</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 GridX Team. Empowering rural communities with smart energy solutions.</p>
+            <div class="footer-links">
+                <span>Last Updated: <span id="last-update">--:--:--</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
