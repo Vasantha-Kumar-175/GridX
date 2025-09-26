@@ -34,6 +34,53 @@
     <!-- Main Dashboard Container -->
     <div class="dashboard-container">
         
+        <!-- System Status Section -->
+        <section class="status-section">
+            <div class="status-container">
+                <div class="system-status">
+                    <div class="status-header">
+                        <h3>DC-DC Boost Converter Status</h3>
+                        <div class="status-badge" id="system-status">
+                            <span class="status-indicator active"></span>
+                            <span class="status-text">ACTIVE</span>
+                        </div>
+                    </div>
+                    <div class="last-update">
+                        Last Update: <span id="system-timestamp">2023-10-27 10:30:15 AM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DC-DC Boost Converter Gauges -->
+        <section class="gauges-section">
+            <div class="gauges-grid">
+                <!-- Output Voltage Gauge -->
+                <div class="gauge-card">
+                    <div class="gauge-header">
+                        <h3>Output Voltage</h3>
+                        <span class="gauge-unit">V</span>
+                    </div>
+                    <div class="gauge-container">
+                        <canvas id="voltageGauge" width="200" height="200"></canvas>
+                        <div class="gauge-value" id="voltage-display">24.5 V</div>
+                    </div>
+                </div>
+
+                <!-- Efficiency Gauge -->
+                <div class="gauge-card">
+                    <div class="gauge-header">
+                        <h3>Efficiency</h3>
+                        <span class="gauge-unit">%</span>
+                    </div>
+                    <div class="gauge-container">
+                        <canvas id="efficiencyGauge" width="200" height="200"></canvas>
+                        <div class="gauge-value" id="efficiency-display">94.2 %</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Energy Metrics Cards -->
         <section class="metrics-section">
             <div class="metrics-grid">
@@ -96,6 +143,75 @@
             </div>
         </section>
 
+        <!-- DC-DC Converter Performance Metrics -->
+        <section class="converter-metrics-section">
+            <div class="converter-metrics-header">
+                <h3>Real-Time DC-DC Converter Performance</h3>
+            </div>
+            <div class="converter-metrics-grid">
+                
+                <!-- Input Voltage -->
+                <div class="converter-metric">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-info">
+                        <div class="metric-label">Input Voltage</div>
+                        <div class="metric-display">
+                            <span id="input-voltage">12.5</span>
+                            <span class="metric-unit">V</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Current -->
+                <div class="converter-metric">
+                    <div class="metric-icon">🔌</div>
+                    <div class="metric-info">
+                        <div class="metric-label">Input Current</div>
+                        <div class="metric-display">
+                            <span id="input-current">2.8</span>
+                            <span class="metric-unit">A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Current -->
+                <div class="converter-metric">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-info">
+                        <div class="metric-label">Output Current</div>
+                        <div class="metric-display">
+                            <span id="output-current">1.4</span>
+                            <span class="metric-unit">A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Power -->
+                <div class="converter-metric">
+                    <div class="metric-icon">⚙️</div>
+                    <div class="metric-info">
+                        <div class="metric-label">Output Power</div>
+                        <div class="metric-display">
+                            <span id="output-power">34.3</span>
+                            <span class="metric-unit">W</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duty Cycle -->
+                <div class="converter-metric">
+                    <div class="metric-icon">📊</div>
+                    <div class="metric-info">
+                        <div class="metric-label">Duty Cycle</div>
+                        <div class="metric-display">
+                            <span id="duty-cycle">48.7</span>
+                            <span class="metric-unit">%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Chart and Alerts Section -->
         <section class="analytics-section">
             
@@ -131,7 +247,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 GridX Team. Empowering rural communities with smart energy solutions.</p>
+            <p>&copy; 2024 GridX Team. Empowering rural communities with smart energy solutions.</p>
             <div class="footer-links">
                 <span>Last Updated: <span id="last-update">--:--:--</span></span>
             </div>
